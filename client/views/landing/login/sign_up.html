@@ -1,0 +1,17 @@
+<template name='userSignUp'>
+  <div class="form-box">
+    <header>
+      <h2>Create your <b>free account</b>!</h2>
+    </header>
+    {{#autoForm schema="Schemas.UserSignUp" id="signUpForm" }}
+      {{> afQuickField name='email' type="text" placeholder="Write your email address here"}}
+      {{> afQuickField name='companyName' placeholder="Write your fullname here" }}
+      {{> afQuickField name='password' type="password" placeholder="Create your password" }}
+      {{> afQuickField name='passwordConfirmation' type="password" placeholder="Your password once again" }}
+      <div class="buttons">
+        <button class="btn btn-primary" type='submit'>Register now</button>
+      </div>
+    {{/autoForm }}
+
+  </div>
+</template>

@@ -1,0 +1,65 @@
+@import "client/lib/css/main"
+
+section.branding
+  background: #209150 url("branding.jpg") no-repeat 50% 50%
+  height: 96vh
+  min-height: 700px
+  color: #fff
+  position: relative
+  .logo-line
+    padding: 25px 0 0
+    height: 10vh
+  h1
+    padding: 20vh 0 10px
+  h2 
+    font-size: 26px
+    font-weight: 300
+    padding-bottom: 20px
+  .sticky
+    position: absolute
+    left: 0
+    bottom: 30px
+    width: 100%
+    text-align: center
+    a i
+      padding: 0 10px
+  .form-box
+    margin-bottom: 50px
+
+@media(max-width: $screen-sm-max)
+  section.branding
+    height: auto
+    h1
+      padding: 20px 0
+      text-align: center
+    h2
+      text-align: center
+    .sticky
+      position: relative
+      top: auto
+      bottom: auto
+      margin-bottom: 20px
+    .nav-tabs li 
+      float: left
+      width: 50%
+      a
+        margin-bottom: 0
+      &.active:hover a
+        border-bottom: transparent
+
+
+
+
+section.features
+  padding: 50px 0
+
+  h3 i
+    color: $green
+    padding-right: 5px
+
+  h3
+    font-weight:400
+
+  p
+    color: #0B0B0B
+    font-weight:300

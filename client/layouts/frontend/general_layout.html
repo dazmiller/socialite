@@ -1,0 +1,41 @@
+<template name="generalLayout">
+  <header class="github">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class='pull-left'>
+            Hello, 
+            {{#if currentUser}}
+              <a href="{{pathFor route='dashboard'}}">{{currentUser.userName }}</a>
+            {{else}}
+              random citizen!
+            {{/if}}
+          </div>
+          <div class='pull-right'>
+            <span class="hidden-sm hidden-xs">Save time & money </span>
+           
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  {{> yield }}
+  {{#unless is_mobile}}
+    <footer class="rst">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12">
+            <div class='pull-left'>
+             Created By  <a href="http://biyersapp.com">Biyers App</a>.
+            </div>
+            <div class='pull-right hidden-xs'>
+              Check out our
+              <a href="#">terms and conditions </a> and <a href="#"> legal stuff</a>
+              and save time and money with us!
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  {{/unless}}
+</template>

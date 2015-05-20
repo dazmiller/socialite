@@ -1,0 +1,21 @@
+<template name="userMedical">
+    <div class="form-box">
+        <header>
+            <h2>User <b>Medical</b> Profile</h2>
+        </header>
+        {{#autoForm schema="Schemas.UserMedical" id="MedicalForm" }}
+            {{> afQuickField name='relationshipStatus' placeholder="Whats your current relationship status" options="allowed" }}
+            {{> afQuickField name='LookingFor' placeholder="What are you looking for?"  options="allowed" }}
+            {{> afQuickField name='Excess'  placeholder="Want Excess" }}
+            {{> afQuickField name='Extras'  placeholder="What additional options are you after" }}
+            {{> afQuickField name='HospitalCover'  placeholder="What level of hospital cover do you want" }}
+            {{> afQuickField name='HospitalWaitingPeriod'  placeholder="How long do you want to wait?" options="allowed"}}
+            {{> afQuickField name='CurrentIllnessorInjury'  placeholder="Any current illness or injuries?" }}
+
+            <div class="buttons">
+                <button class="btn btn-primary" type='submit'>Save</button>
+            </div>
+        {{/autoForm }}
+
+    </div>
+</template>

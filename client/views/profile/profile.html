@@ -1,0 +1,48 @@
+<template name='profile'>
+    <div class="col-lg-10 col-lg-offset-1  col-md-10 col-md-offset-1" >
+        <div role="tabpanel" style="padding-bottom:115px;padding-top:20px">
+            <ul class="nav nav-tabs nav-justified" role="tablist">
+                <li role="presentation" class="active"><a href="#personal" aria-controls="personal" role="tab" data-toggle="tab">Your Info</a></li>
+                <li role="presentation"><a href="#medical" aria-controls="medical" role="tab" data-toggle="tab">Medical</a></li>
+                <li role="presentation"><a href="#social" aria-controls="social" role="tab" data-toggle="tab">Social</a></li>
+                <li role="presentation"><a href="#housing" aria-controls="housing" role="tab" data-toggle="tab">Your Home</a></li>
+                <li role="presentation"><a href="#banking" aria-controls="banking" role="tab" data-toggle="tab">Your Banks</a></li>
+                <li role="presentation"><a href="#insurance" aria-controls="insurance" role="tab" data-toggle="tab">Your Insurance</a></li>
+                <li role="presentation"><a href="#transport" aria-controls="transport" role="tab" data-toggle="tab">Your Transport</a></li>
+            </ul>
+<script>
+
+    if (Meteor.isClient) {
+     //   AutoForm.setDefaultTemplate('materialize');
+    }
+</script>
+            <!-- Tab panes -->
+            <div class="tab-content" >
+                <div role="tabpanel" class="tab-pane active" id="personal">
+                    {{> userPersonal}}
+                </div>
+                <div role="tabpanel" class="tab-pane" id="medical">
+                    {{> userMedical}}
+                </div>
+                <div role="tabpanel" class="tab-pane" id="social">
+                    {{> userSocial}}
+                </div>
+                <div role="tabpanel" class="tab-pane" id="housing">
+                    {{> userHousing}}
+                </div>
+                <div role="tabpanel" class="tab-pane" id="banking">
+                    {{> userBanking}}
+                </div>
+                <div role="tabpanel" class="tab-pane" id="insurance">
+                    {{> userInsurance}}
+                </div>
+                <div role="tabpanel" class="tab-pane" id="transport">
+                    {{> userTransport}}
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+</template>

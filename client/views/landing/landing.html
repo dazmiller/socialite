@@ -1,0 +1,79 @@
+<template name="landing">
+  <section class="branding">
+    <div class="container">
+      <div class="row">
+       <div class="col-xs-12">
+          <div class="logo-line"><!-- <img src="logo.png"> --> </div>
+        </div> 
+      </div>
+      <div class="row">
+        {{#unless is_mobile}}
+        <div class="col-lg-6 col-md-5">
+          <h1>
+            Let companies do the running around <b>for you</b> to get your business! 
+          </h1>
+          <h2><b>Give feedback</b> and focus on the <b>most important</b> things in life instead of being on hold.</h2>
+          <p>
+            <a href="#"><img src="/gplay.png"></a>
+          </p>
+        </div>
+        {{/unless}}
+        <div class="col-lg-5 col-lg-offset-1 col-md-6 col-md-offset-1">
+          <div role="tabpanel">
+            <ul class="nav nav-tabs nav-justified" role="tablist">
+              <li role="presentation" class="active"><a href="#register" aria-controls="register" role="tab" data-toggle="tab">Register</a></li>
+              <li role="presentation"><a href="#login" aria-controls="login" role="tab" data-toggle="tab">Login</a></li>
+            </ul>
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+              <div role="tabpanel" class="tab-pane active" id="register">
+                {{> userSignUp}}
+              </div>
+              <div role="tabpanel" class="tab-pane" id="login">
+                {{> userSignIn}}
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      {{#unless is_mobile}}
+      <div class="sticky">
+        <a href="#features" class="btn btn-transparent">
+          <i class="fa fa-caret-down"></i>
+          LEARN MORE
+          <i class="fa fa-caret-down"></i>
+        </a>
+      </div>
+      {{/unless}}
+    </div>
+  </section>
+  {{#unless is_mobile}}
+    <section class="features" id="features">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-4">
+            <h3><i class="fa fa-user"></i> Feel like a puppet?</h3>
+            <p>
+              Something that gets under our skin is the amount of running around a company makes you do for the privilige of becoming a customer. Time is precious, why wait on hold, repeat your information again and again when you know what you want. Make the companies chase you with their best offer and let you pick and choose what suits you best.
+            </p>
+
+          </div>
+          <div class="col-sm-4">
+            <h3><i class="fa fa-sort-amount-asc"></i> Take back control of your data</h3>
+            <p>Share your data with who you want. Dont let your information be send to direct marketing companies. Utilizing our unique privacy data technology you can decide what data you want to send to the company, and what will remain private. Dont let them extract useless data *used only for their own marketing purposes" from you before they let you apply.</p>
+            <p>When its time to apply, dont wait on the phone repeating your information, enter it once and then apply with a click of a button. Save your time, fingers, patience and sanity.</p>
+          </div>
+          <div class="col-sm-4">
+            <h3><i class="fa fa-github"></i> Australian Based</h3>
+            <p>
+             We are an Australian company working for Australians. We will keep your data safe and promise not to use it for any "nasty" purposes. We wont re-sell your data, we simply make a commission if you decide to go with a esrvice offered through our portal. We charge the company not you for the data.
+            </p>
+    
+          </div>
+        </div>
+      </div>
+    </section>
+  {{/unless}}
+</template>

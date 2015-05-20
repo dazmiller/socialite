@@ -1,0 +1,17 @@
+<template name="userPersonal">
+    <div class="form-box">
+        <header>
+            <h2>User <b>Personal</b> Profile</h2>
+        </header>
+        {{#autoForm schema="Schemas.UserProfile" id="personalProfileForm" }}
+            {{> afQuickField name='firstName' placeholder="Write your first name(s) here" }}
+            {{> afQuickField name='lastName' placeholder="Write your surname here" }}
+            {{> afQuickField name='birthday' type="date" placeholder="Enter your birth date" }}
+            {{> afQuickField name='gender' placeholder="Gender" options="allowed" }}
+            {{> afQuickField name='bio' placeholder="Your Bio" rows="5" }}
+            <div class="buttons">
+                <button class="btn btn-primary" type='submit'>Save</button>
+            </div>
+        {{/autoForm }}
+    </div>
+</template>

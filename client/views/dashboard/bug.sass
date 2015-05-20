@@ -1,0 +1,67 @@
+@import "client/lib/css/main"
+
+.bug
+  min-height: 70px
+  border-bottom: 1px solid $border-gray
+  .buttons
+    float: right
+  .counter
+    float: left
+    width: 90px
+    padding: 20px 0 0
+    font-size: 18px
+    font-weight: 300
+    text-align: center
+    &.green
+      color: $green
+    &.red
+      color: $red
+  a.btn
+    text-transform: uppercase
+    width: 90px
+    height: 70px
+    padding: 30px 0
+    margin: 0
+    text-align: center
+    font-size: 12px
+    background: transparent
+    float: right
+    color: $gray
+    &:last-child
+      border-right: 1px solid $border-gray
+    &.selected
+      color: #fff
+      &.agree
+        background: $green
+      &.disagree
+        background: $red
+  .core
+    margin: 0 180px 0 90px
+    padding-top: 25px
+    h4
+      margin: 0
+      padding: 0
+      font-size: 14px
+      font-weight: 300
+    p
+      padding: 0
+      margin: 0
+      font-size: 12px
+      font-weight: bold
+
+
+@media(max-width: $screen-sm-max)
+  .bug
+    min-height: 50px
+    margin: 0 -15px
+    .counter
+      width: 50px
+      padding: 15px 0 0
+    a.btn
+      width: 60px
+      height: 50px
+      padding: 17px 0
+      font-size: 10px
+    .core
+      margin: 0 120px 0 50px
+      padding: 10px 0

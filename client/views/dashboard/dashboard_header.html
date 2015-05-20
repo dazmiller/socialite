@@ -1,0 +1,49 @@
+<template name="dashboardHeader">
+
+<script>
+    if (Meteor.isClient) {
+        AutoForm.setDefaultTemplate('materialize');
+    }
+
+</script>
+
+
+  <div class="dashboard-header">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="buttons">
+              <a href="{{pathFor route='profile'}}" class="btn btn-link"><i class="fa fa-user"></i> Your Profile</a>
+            <a href="#" class="btn btn-link invite-link"><i class="fa fa-user"></i> Invite new user</a>
+            <a href="{{pathFor route='logout'}}" class="btn btn-link"><i class="fa fa-power-off"></i> Log out</a>
+          </div>
+         <!--  <img class="hidden-xs" src="logo.png"> -->
+        </div>
+      </div>
+    </div>
+  </div>
+  {{#if showInvitation}}
+    <div class="invitation-form">
+      <div class="container">
+        <div class="row">
+          {{#autoForm collection="Invitations" id="createInvitation" type="insert"}}
+            {{> afFieldInput name='companyId' value=company._id type="hidden"}}
+            {{> afFieldInput name='userId' value=currentUser._id type="hidden"}}
+            <div class="col-lg-2 col-md-3">
+              <label>Invite new user:</label>
+            </div>
+            <div class="col-lg-8 col-md-6">
+              {{> afQuickField name='email' placeholder="Write your friend's email here and start saving together..." label=false }}
+            </div>
+            <div class="col-lg-2 col-md-3">
+              <button type="submit" class="btn btn-block btn-transparent">INVITE USER</button>
+            </div>
+          {{/autoForm}}
+          <div class="toggle-button">
+            <a href="#" class="btn btn-link"><i class="fa fa-caret-up"></i> Cancel <i class="fa fa-caret-up"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  {{/if}}
+</template>

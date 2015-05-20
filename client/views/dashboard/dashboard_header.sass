@@ -1,0 +1,70 @@
+@import "client/lib/css/main"
+
+.dashboard-header
+  padding: 10px 0
+  min-height: 80px
+  background: $green
+  .buttons
+    float: right
+    a
+      color: #fff
+      text-transform: uppercase
+
+  img
+    padding: 15px 0
+
+.invitation-form
+  background: $dark-green
+  padding: 30px 0
+  color: #fff
+  position: relative
+  label
+    font-size: 24px
+    font-weight: 200
+    padding: 5px 0
+  .btn
+    padding-left: 0
+    padding-right: 0
+  input
+    overflow: hidden
+    text-overflow: ellipsis
+    padding: 10px 0
+    border: none
+    border-radius: none
+    background: transparent
+    color: #fff
+    box-shadow: none !important
+    font-size: 24px
+    height: 43px
+    @include placeholder
+      color: #fff
+  .help-block
+    color: lighten(red, 40%)
+  .toggle-button
+    position: absolute
+    bottom: 0
+    left: 0
+    width: 100%
+    text-align: center
+    a
+      color: #fff
+      opacity: 0.5
+      padding: 8px 0
+      background: transparent
+      &:hover
+        opacity: 1
+      i
+        padding: 0 5px
+
+@media(max-width: $screen-sm-max)
+  .dashboard-header .buttons 
+    float: none
+    a
+      font-size: 12px
+      display: block
+      width: 50%
+      float: left
+  .invitation-form
+    .toggle-button
+      position: relative
+      margin-bottom: -10px

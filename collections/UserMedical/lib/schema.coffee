@@ -1,0 +1,109 @@
+that = this
+@Schemas ||= {}
+
+
+@Medical = new Mongo.Collection('Medical');
+
+
+@Schemas.UserMedicalCurrentIllness = new SimpleSchema(
+  NameOfIllness:
+    type: String
+  IllnessDetails:
+    type:String
+)
+@Schemas.UserMedical = new SimpleSchema(
+  relationshipStatus:
+    type: String
+    allowedValues: [
+        'Single'
+        'Couple'
+        'Family'
+        'Single Parent'
+    ]
+  LookingFor:
+    type: String
+    allowedValues: [
+        'Basic Cover'
+        'Medium Cover'
+        'Top Cover'
+        'Cover for planning a family'
+        'Not Sure'
+    ]
+  Excess:
+    type: String
+    optional: false
+  Extras:
+    type: String
+    optional: true
+    autoform:
+      type: "select-checkbox-inline",
+      options:() -> [
+        {label: "Pregnancy", value: "Pregnancy"}
+        {label: 'Heart Surgery', value: 'Heart Surgery'}
+        {label: 'Hip & Knee Replacement', value: 'Hip & Knee Replacement'}
+        {label: 'Psychiatric Services', value: 'Psychiatric Services'}
+        {label: 'Dental (preventative)', value: 'Dental (preventative)'}
+        {label: 'Ph ysiotherapy', value: 'Physiotherapy'}
+        {label: 'Optical', value:  'Optical'}
+        {label: 'Chiropractic', value:  'Chiropractic'}
+        {label: 'Hearing Aids', value:  'Hearing Aids'}
+        {label: 'Orthodontics', value:  'Orthodontics'}
+        {label: 'Remedial Massage', value:  'Remedial Massage'}
+      ]
+  HospitalCover:
+    type: String
+    optional: true
+    autoform:
+      type: "select-checkbox-inline",
+      options:() -> [
+        {label: 'Emergency Ambulance', value: 'Emergency Ambulance'}
+        {label: 'Accidents', value:  'Accidents'}
+        {label: 'Heart', value:  'Heart'}
+        {label: 'Hip & Knee', value: 'Hip & Knee'}
+        {label: 'Pregnancy', value: 'Pregnancy'}
+        {label: 'Psychiatric', value: 'Psychiatric'}
+        {label: 'Accident related services after joining', value:  'Accident related services after joining'}
+        {label: 'Removal of tonsils, adenoids, appendix', value:   'Removal of tonsils, adenoids, appendix'}
+        {label: 'Surgical treatment of a hernia', value: 'Surgical treatment of a hernia'}
+        {label: 'Removal of kidney stones & gall stones', value:  'Removal of kidney stones & gall stones'}
+        {label: 'Digestive disorder procedures (e.g. bowel surgery', value: 'Digestive disorder procedures (e.g. bowel surgery'}
+        {label: 'Cancer related services (e.g. chemotherapy)', value:  'Cancer related services (e.g. chemotherapy)'}
+        {label: 'Heart surgery including diagnostic & therapeutic cardiac procedures', value: 'Heart surgery including diagnostic & therapeutic cardiac procedures'}
+        {label: 'Spinal surgery (excluding surgery related to spinal scoliosis)', value: 'Spinal surgery (excluding surgery related to spinal scoliosis)'}
+        {label: 'Surgery related to spinal scoliosis', value:  'Surgery related to spinal scoliosis'}
+        {label: 'Cochlear implant surgery & bone anchored hearing devices', value:  'Cochlear implant surgery & bone anchored hearing devices'}
+        {label: 'Insulin pump treatments', value:  'Insulin pump treatments'}
+        {label: 'Dialysis for chronic renal failure', value: 'Dialysis for chronic renal failure'}
+        {label: 'Rehabilitation services', value: 'Rehabilitation services'}
+        {label: 'Psychiatric services', value:  'Psychiatric services'}
+        {label: 'Gastric banding & obesity surgery', value: 'Gastric banding & obesity surgery'}
+        {label: 'Assisted reproductive services (e.g. IVF, GIFT)', value: 'Assisted reproductive services (e.g. IVF, GIFT)'}
+        {label: 'Pregnancy & birth related services', value:   'Pregnancy & birth related services'}
+        {label: 'Joint investigations & reconstructions', value: 'Joint investigations & reconstructions'}
+        {label: 'Joint replacements (e.g, hip replacements, knee replacements)', value:   'Joint replacements (e.g, hip replacements, knee replacements)'}
+        {label: 'Cataract and other lens related surgery', value:  'Cataract and other lens related surgery'}
+        {label: 'Sterilisation', value:  'Sterilisation'}
+        {label: 'Elective cosmetic surgery', value:  'Elective cosmetic surgery'}
+        {label: 'Podiatric surgery by an accredited podiatrist', value:  'Podiatric surgery by an accredited podiatrist'}
+        {label: 'All other in-hospital services where a Medicare benefit is payable', value:  'All other in-hospital services where a Medicare benefit is payable'}
+      ]
+
+  HospitalWaitingPeriod:
+    type: String
+    allowedValues: [
+        '1 Day'
+        '1 Month'
+        '2 Months'
+        '3 Months'
+        '6 Months)'
+        '12 Months'
+    ]
+    optional: true
+  CurrentIllnessorInjury:
+    type: @Schemas.UserMedicalCurrentIllness
+    optional: true
+)
+
+@Medical.attachSchema(@Schemas.UserMedical);
+# ---
+# generated by js2coffee 2.0.4

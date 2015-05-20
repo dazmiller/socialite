@@ -1,0 +1,1 @@
+@UserMedical = new Mongo.Collection("UserMedical")
